@@ -116,9 +116,9 @@ public class Editor_de_variaveis_para_QuestaoConector_Discursiva {
         // TODO code application logic here
         JOptionPane.showMessageDialog(null, "Esse projeto consiste em criar dois arquivos: "
                 + "questao.xml e conector.java\n\nPara usá-lo corretamente siga os seguintes passos:\n"
-                + "1º Crie as questões num arquivo qualquer seguindo o padrão Questionation (padrão próprio);\n"
-                + "2º Utilizando o Notepad++ rode a macro \"string name q 0 a 9\" para complementar o arquivo;\n"
-                + "3º É importante lembrar de colocar x na frente das alternativas que são as corretas. Se não tiver feito faça-o agora\n");
+                + "1º Crie as questões num arquivo qualquer seguindo o padrão Questionation 2(padrão próprio);\n"
+                + "2º Não precisa rodar macro nenhum, mas é importante prestar a atenção nas respostas (deve ter \"Resp.:\" escrito desse jeito);\n"
+                );
         JOptionPane.showMessageDialog(null, "Escolha o arquivo");
         Editor_de_variaveis_para_QuestaoConector_Discursiva editor = new Editor_de_variaveis_para_QuestaoConector_Discursiva();
         File file = editor.abrirArquivo();
