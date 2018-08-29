@@ -36,7 +36,8 @@ public class Editor_de_variaveis_para_QuestaoConector_Discursiva {
     @SuppressWarnings("empty-statement")
     public void realizarLeituraDaLinhaDoArquivo(File file) throws FileNotFoundException, IOException {
         try (FileInputStream fis = new FileInputStream(file.getAbsolutePath())) {
-            Charset cs = Charset.forName("Cp1252");
+            //Charset cs = Charset.forName("Cp1252");
+            Charset cs = Charset.forName("UTF-8");
             InputStreamReader isr = new InputStreamReader(fis, cs);
             int ch;
             int contador = 0;
@@ -47,6 +48,9 @@ public class Editor_de_variaveis_para_QuestaoConector_Discursiva {
                 if (ch != 13) {
                     if (ch != 10) {
                         text += String.valueOf((char) ch);
+                    }else{
+                        contador = processarLinha2(text, arquivoParaSalvar, contador);
+                        text = "";
                     }
                 } else {
                     contador = processarLinha2(text, arquivoParaSalvar, contador);
