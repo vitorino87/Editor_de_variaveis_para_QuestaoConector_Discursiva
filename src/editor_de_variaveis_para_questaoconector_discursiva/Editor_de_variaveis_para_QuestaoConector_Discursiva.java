@@ -37,7 +37,10 @@ public class Editor_de_variaveis_para_QuestaoConector_Discursiva {
     public void realizarLeituraDaLinhaDoArquivo(File file) throws FileNotFoundException, IOException {
         try (FileInputStream fis = new FileInputStream(file.getAbsolutePath())) {
             //Charset cs = Charset.forName("Cp1252");
-            Charset cs = Charset.forName("UTF-8");
+            
+            String charset = JOptionPane.showInputDialog(null, "Escolha a codificação, exemplo:"
+                    + " UTF-8, Cp1252, etc.:");
+            Charset cs = Charset.forName(charset);
             InputStreamReader isr = new InputStreamReader(fis, cs);
             int ch;
             int contador = 0;
