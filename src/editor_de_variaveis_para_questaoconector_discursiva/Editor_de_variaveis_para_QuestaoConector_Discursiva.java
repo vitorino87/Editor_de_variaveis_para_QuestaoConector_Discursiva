@@ -5,13 +5,18 @@
  */
 package editor_de_variaveis_para_questaoconector_discursiva;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -89,16 +94,28 @@ public class Editor_de_variaveis_para_QuestaoConector_Discursiva {
     }
 
     public void salvarLinhasProcessadas(String file, String textoParaSalvar) {
-        try {
+        //try {
             if (file != null) {
-                try (FileWriter fw = new FileWriter(file, true)) {
-                    fw.write(textoParaSalvar);
-                }
-            }
+                try (Writer fw2 = new OutputStreamWriter(new FileOutputStream(file, true), StandardCharsets.UTF_8)) {
+                   //JOptionPane.showConfirmDialog(null, fw.getEncoding());   
+                   //Writer fw2 = new OutputStreamWriter(new FileOutputStream(file, true), StandardCharsets.UTF_8);
+                   //BufferedWriter bw = new BufferedWriter(fw2);
+                  fw2.write(textoParaSalvar);
+                //FileWriter fw = new FileWriter(file, true);
+                //fw.write(textoParaSalvar);
+                //}
+                //try{
+                //   BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, true), StandardCharsets.UTF_8));
+                //  bw.write(textoParaSalvar);
+                //}catch(Exception ex){
+                        
+                //}
+            
         } catch (Exception ex) {
 
         }
 
+    }
     }
 
     public File selecionarLocalParaSalvar() {
