@@ -110,7 +110,7 @@ public class Editor_de_variaveis_para_QuestaoConector_Discursiva {
                 //}catch(Exception ex){
                         
                 //}
-            
+            //melhorias foram feitas
         } catch (Exception ex) {
 
         }
